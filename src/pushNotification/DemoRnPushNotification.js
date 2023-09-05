@@ -1,59 +1,52 @@
-import { Text, StyleSheet, View ,TouchableOpacity} from 'react-native'
-import React, { Component } from 'react'
-import PushNotification from "react-native-push-notification";
+import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
+import React, {Component} from 'react';
+import PushNotification from 'react-native-push-notification';
 
-export default  DemoPushNotification =() => {
-
+export default DemoPushNotification = () => {
   const handleNotification = (item, index) => {
-
     PushNotification.cancelAllLocalNotifications();
 
     PushNotification.localNotification({
-        channelId: "test-channel",
-        title: "You clicked on " ,
-        message: "Xin chao",
-        bigText: " is one of the largest and most beatiful cities in " ,
-        color: "red",
-        id: index
+      channelId: 'test-channel',
+      title: 'You clicked on ',
+      message: 'Xin chao',
+      bigText: ' is one of the largest and most beatiful cities in ',
+      color: 'red',
+      id: index,
     });
 
     PushNotification.localNotificationSchedule({
-        channelId: "test-channel",
-        title: "Alarm",
-        message: "You clicked on "  + " 20 seconds ago",
-        date: new Date(Date.now() + 20 * 1000),
-        allowWhileIdle: true,
+      channelId: 'test-channel',
+      title: 'Alarm',
+      message: 'You clicked on ' + ' 20 seconds ago',
+      date: new Date(Date.now() + 20 * 1000),
+      allowWhileIdle: true,
     });
-}
+  };
   return (
     <View style={styles.body}>
-        <Text style={[
-           
-            styles.text
-        ]}>
-            Welcome {name} !
-        </Text>
-       
-                <TouchableOpacity
-                    onPress={() => { handleNotification("Xin chao ", 45) }}
-                >
-                  <Text> Bam de hien thong bao</Text>
-                </TouchableOpacity>
-        
+      <Text style={[styles.text]}>Welcome {name} !</Text>
+
+      <TouchableOpacity
+        onPress={() => {
+          handleNotification('Xin chao ', 45);
+        }}>
+        <Text> Bam de hien thong bao</Text>
+      </TouchableOpacity>
     </View>
-)
-}
+  );
+};
 
 const styles = StyleSheet.create({
-body: {
+  body: {
     flex: 1,
     alignItems: 'center',
-},
-text: {
+  },
+  text: {
     fontSize: 40,
     margin: 10,
-},
-input: {
+  },
+  input: {
     width: 300,
     borderWidth: 1,
     borderColor: '#555',
@@ -63,8 +56,8 @@ input: {
     fontSize: 20,
     marginTop: 130,
     marginBottom: 10,
-},
-item: {
+  },
+  item: {
     backgroundColor: '#ffffff',
     borderWidth: 2,
     borderColor: '#cccccc',
@@ -73,16 +66,14 @@ item: {
     width: 350,
     justifyContent: 'center',
     alignItems: 'center',
-},
-title: {
+  },
+  title: {
     fontSize: 30,
     margin: 10,
-},
-subtitle: {
+  },
+  subtitle: {
     fontSize: 20,
     margin: 10,
     color: '#999999',
-}
-  })
-
-
+  },
+});
