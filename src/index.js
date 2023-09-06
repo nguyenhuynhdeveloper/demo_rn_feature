@@ -5,6 +5,7 @@ export {default as DemoGeolocation} from './geolocation/DemoRnGeolocation';
 export {default as DemoMaps} from './maps/DemoMaps';
 export {default as ExMaps} from './maps/ExMaps';
 export {default as DemoRncNetinfo} from './NetInfo/DemoRncNetInfo';
+
 export {default as DemoPushNotification} from './pushNotification/DemoRnPushNotification';
 export {default as ScanFunction} from './QRcode/ExScanFunction';
 // export {default as DemoRnQrcode}  from "./QRcode/DemoRnQRcode"
